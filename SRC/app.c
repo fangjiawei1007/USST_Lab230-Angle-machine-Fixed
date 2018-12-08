@@ -1261,7 +1261,7 @@ InPulseCount[7]
 	}
 	
 ////////*****************************************************************///////////	
-
+				
 	if(g_InteralMemory.Bit[7] == 1)///////////////产品三参数写入
 	{
 		
@@ -1301,6 +1301,11 @@ InPulseCount[7]
 			Dingchang3_1 = Dingchang3 * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
 			
 			
+			/**Bug Fixed by FJW**/
+			if(g_InteralMemory.KeepWord[94] == 0){
+				g_InteralMemory.KeepWord[94] = 13500;
+			}
+			/**Bug Fixed by FJW**/
 			
 			g_InteralMemory.KeepWord[98] = 10000 * g_InteralMemory.KeepWord[93] / g_InteralMemory.KeepWord[94];////下刀过程编码器脉冲数
 				
@@ -1802,6 +1807,12 @@ InPulseCount[7]
 			Dingchang2_1 = Dingchang2 * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
 			Dingchang3_1 = Dingchang3 * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
 			
+			/**Bug Fixed by FJW**/
+			if(g_InteralMemory.KeepWord[94] == 0){
+				g_InteralMemory.KeepWord[94] = 13500;
+			}
+			/**Bug Fixed by FJW**/
+			
 			g_InteralMemory.KeepWord[98] = 10000 * g_InteralMemory.KeepWord[93] / g_InteralMemory.KeepWord[94];////下刀过程编码器脉冲数
 				
 			g_InteralMemory.KeepWord[99] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
@@ -1878,7 +1889,7 @@ InPulseCount[7]
 		if(g_InteralMemory.Bit[27]==1)///系统启动	
 			InPulse1_Start();
 	}
-	
+				
 	if(g_InteralMemory.Bit[34] == 1)///////////////选中产品5
 	{
 		InPulse1_Stop();//切换产品前先暂停脉冲输入 待数据全部导入后再开启脉冲输入
@@ -1947,7 +1958,11 @@ InPulseCount[7]
 			Dingchang3_1 = Dingchang3 * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
 			
 			
-			
+			/**Bug Fixed by FJW**/
+			if(g_InteralMemory.KeepWord[94] == 0){
+				g_InteralMemory.KeepWord[94] = 13500;
+			}
+			/**Bug Fixed by FJW**/
 			g_InteralMemory.KeepWord[98] = 10000 * g_InteralMemory.KeepWord[93] / g_InteralMemory.KeepWord[94];////下刀过程编码器脉冲数
 				
 			g_InteralMemory.KeepWord[99] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
@@ -2093,7 +2108,11 @@ InPulseCount[7]
 			Dingchang3_1 = Dingchang3 * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
 			
 			
-			
+			/**Bug Fixed by FJW**/
+			if(g_InteralMemory.KeepWord[94] == 0){
+				g_InteralMemory.KeepWord[94] = 13500;
+			}
+			/**Bug Fixed by FJW**/
 			g_InteralMemory.KeepWord[98] = 10000 * g_InteralMemory.KeepWord[93] / g_InteralMemory.KeepWord[94];////下刀过程编码器脉冲数
 				
 			g_InteralMemory.KeepWord[99] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
@@ -2239,8 +2258,14 @@ InPulseCount[7]
 			Dingchang2_1 = Dingchang2 * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
 			Dingchang3_1 = Dingchang3 * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
 			
+			/**Bug Fixed by FJW**/
+			if(g_InteralMemory.KeepWord[94] == 0){
+				g_InteralMemory.KeepWord[94] = 13500;
+			}
+			/**Bug Fixed by FJW**/
+			
 			g_InteralMemory.KeepWord[98] = 10000 * g_InteralMemory.KeepWord[93] / g_InteralMemory.KeepWord[94];////下刀过程编码器脉冲数
-				
+			
 			g_InteralMemory.KeepWord[99] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
 			
 			g_InteralMemory.KeepWord[100] = 10000 * g_InteralMemory.KeepWord[4] / g_InteralMemory.KeepWord[94];////抬刀过程编码器脉冲数
@@ -2319,7 +2344,7 @@ InPulseCount[7]
 			InPulse1_Start();
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////
-
+			
 	if(g_InteralMemory.Bit[38] == 1)/////三个产量kw83   87  91
 	{
 	//	g_InteralMemory.Bit[38] =0;
