@@ -1,0 +1,12 @@
+#define onecircle_pulse  1000  //ÇÐµ¶Ò»È¦Âö³åÊý
+
+#define Encoder_Pulse  g_InteralMemory.KeepWord[600]  //ÇÐµ¶Ò»È¦Âö³åÊý
+
+void App_Init(void);
+
+
+
+void App_Operation(void);
+
+
+void Hujiaoji_Init(void);

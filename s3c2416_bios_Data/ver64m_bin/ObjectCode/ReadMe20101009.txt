@@ -1,0 +1,17 @@
+
+1,把 armar拷贝到 OBJ文件夹
+2,进入编译后的 Obj 文件夹
+Dos命令输入:
+armar --create Arm9Lib.a 2416lib.o 2416slib.o bmp.o communication.o download.o encrypt.o end.o function.o jiema.o LCD.o mmu.o nand.o rtc.o start.o systemconf.o systemmenu.o test.o zk.o main.o
+回车即可以创建.
+
+
+
+运行cmd 启动cmd.exe
+先进入文件所在的分区 e:
+进入编译后的 Obj 文件夹
+cd Project\ARM9无OS\s3c2416_Encrypt\s3c2416_Encrypt\s3c2416_Encrypt_100930\s3c2416_bios_Data\ver64m_bin\ObjectCode
+启动armar.exe
+通过右键复制命令（命令直接为空格，不能是回车）
+生出库文件：Arm9Lib.a
+放到SRC目录，同时删除.o文件所对应的.c文件
