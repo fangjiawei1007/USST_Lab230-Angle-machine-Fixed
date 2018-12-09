@@ -700,6 +700,12 @@ InPulseCount[7]
 			g_InteralMemory.KeepWord[7] = 10000 * onecircle_pulse * Gunzhijing / 5000.0 / Pianxinju_2 / i;//A点K值K_A2
 			
 			g_InteralMemory.KeepWord[11] = Dingchang * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
+			
+			/**Bug Fixed by FJW**/
+			if(g_InteralMemory.KeepWord[7] == 0){
+				g_InteralMemory.KeepWord[7] = 13600;
+			}
+			/**Bug Fixed by FJW**/
 			g_InteralMemory.KeepWord[12] = 10000 * g_InteralMemory.KeepWord[6] / g_InteralMemory.KeepWord[7];////下刀过程编码器脉冲数
 				
 			g_InteralMemory.KeepWord[13] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
@@ -799,7 +805,17 @@ InPulseCount[7]
 			
 			g_InteralMemory.KeepWord[60] = tmp * Encoder_Pulse / PI / Gunzhijing ;////末段编码器脉冲数
 		
+			/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[46] == 0)   
+				g_InteralMemory.KeepWord[46] = 25500;  
+			/**************Bug修复 by方佳伟*********************/ 
+			
 			g_InteralMemory.KeepWord[61] = 10000 * g_InteralMemory.KeepWord[45] / g_InteralMemory.KeepWord[46];////冲口下刀过程编码器脉冲数
+			
+			/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[260] == 0)   
+				g_InteralMemory.KeepWord[260] = 1000;  
+			/**************Bug修复 by方佳伟*********************/ 
 			
 			g_InteralMemory.KeepWord[62] = Pianxinju_1 * sin(a) * Encoder_Pulse / PI / Gunzhijing * 1000 / g_InteralMemory.KeepWord[260] ;////冲口过程编码器脉冲数
 			
@@ -996,6 +1012,10 @@ InPulseCount[7]
 			g_InteralMemory.KeepWord[380] = 10000 * onecircle_pulse * Gunzhijing / 5000.0 / Pianxinju_2 / i ;//A点K值K_A2
 			
 			g_InteralMemory.KeepWord[381] = Dingchang * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
+			/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[380] == 0)   
+				g_InteralMemory.KeepWord[380] = 13600;  
+			/**************Bug修复 by方佳伟*********************/ 
 			g_InteralMemory.KeepWord[382] = 10000 * g_InteralMemory.KeepWord[379] / g_InteralMemory.KeepWord[380];////下刀过程编码器脉冲数
 				
 			g_InteralMemory.KeepWord[383] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
@@ -1094,8 +1114,16 @@ InPulseCount[7]
 			
 			g_InteralMemory.KeepWord[401] = tmp * Encoder_Pulse / PI / Gunzhijing ;////末段编码器脉冲数
 		
-			g_InteralMemory.KeepWord[402] = 10000 * g_InteralMemory.KeepWord[387] / g_InteralMemory.KeepWord[388];////冲口下刀过程编码器脉冲数
+			/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[388] == 0)   
+				g_InteralMemory.KeepWord[388] = 25500;  
+			/**************Bug修复 by方佳伟*********************/ 
 			
+			g_InteralMemory.KeepWord[402] = 10000 * g_InteralMemory.KeepWord[387] / g_InteralMemory.KeepWord[388];////冲口下刀过程编码器脉冲数
+			/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[260] == 0)   
+				g_InteralMemory.KeepWord[260] = 1000;  
+			/**************Bug修复 by方佳伟*********************/ 
 			g_InteralMemory.KeepWord[403] = Pianxinju_1 * sin(a) * Encoder_Pulse / PI / Gunzhijing * 1000 / g_InteralMemory.KeepWord[260];////冲口过程编码器脉冲数
 			
 			g_InteralMemory.KeepWord[404] = g_InteralMemory.KeepWord[403] + 10000 * (g_InteralMemory.KeepWord[44]-g_InteralMemory.KeepWord[386]) / g_InteralMemory.KeepWord[388];////冲口抬刀过程编码器脉冲数
@@ -1303,7 +1331,7 @@ InPulseCount[7]
 			
 			/**Bug Fixed by FJW**/
 			if(g_InteralMemory.KeepWord[94] == 0){
-				g_InteralMemory.KeepWord[94] = 13500;
+				g_InteralMemory.KeepWord[94] = 13600;
 			}
 			/**Bug Fixed by FJW**/
 			
@@ -1809,7 +1837,7 @@ InPulseCount[7]
 			
 			/**Bug Fixed by FJW**/
 			if(g_InteralMemory.KeepWord[94] == 0){
-				g_InteralMemory.KeepWord[94] = 13500;
+				g_InteralMemory.KeepWord[94] = 13600;
 			}
 			/**Bug Fixed by FJW**/
 			
@@ -1960,7 +1988,7 @@ InPulseCount[7]
 			
 			/**Bug Fixed by FJW**/
 			if(g_InteralMemory.KeepWord[94] == 0){
-				g_InteralMemory.KeepWord[94] = 13500;
+				g_InteralMemory.KeepWord[94] = 13600;
 			}
 			/**Bug Fixed by FJW**/
 			g_InteralMemory.KeepWord[98] = 10000 * g_InteralMemory.KeepWord[93] / g_InteralMemory.KeepWord[94];////下刀过程编码器脉冲数
@@ -2110,7 +2138,7 @@ InPulseCount[7]
 			
 			/**Bug Fixed by FJW**/
 			if(g_InteralMemory.KeepWord[94] == 0){
-				g_InteralMemory.KeepWord[94] = 13500;
+				g_InteralMemory.KeepWord[94] = 13600;
 			}
 			/**Bug Fixed by FJW**/
 			g_InteralMemory.KeepWord[98] = 10000 * g_InteralMemory.KeepWord[93] / g_InteralMemory.KeepWord[94];////下刀过程编码器脉冲数
@@ -2260,7 +2288,7 @@ InPulseCount[7]
 			
 			/**Bug Fixed by FJW**/
 			if(g_InteralMemory.KeepWord[94] == 0){
-				g_InteralMemory.KeepWord[94] = 13500;
+				g_InteralMemory.KeepWord[94] = 13600;
 			}
 			/**Bug Fixed by FJW**/
 			
@@ -2992,7 +3020,10 @@ InPulseCount[7]
 		g_InteralMemory.KeepWord[126] = g_InteralMemory.KeepWord[108] * g_InteralMemory.KeepWord[109] / 1000 * Encoder_Pulse / PI / Gunzhijing ;////段长3编码器脉冲数
 		g_InteralMemory.KeepWord[127] = g_InteralMemory.KeepWord[110] * g_InteralMemory.KeepWord[111] / 1000 * Encoder_Pulse / PI / Gunzhijing ;////段长4编码器脉冲数
 
-		
+		/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[123] == 0)   
+				g_InteralMemory.KeepWord[123] = 25500;  
+			/**************Bug修复 by方佳伟*********************/ 
 		g_InteralMemory.KeepWord[130] = g_InteralMemory.KeepWord[129] + 10000 * (g_InteralMemory.KeepWord[44]-g_InteralMemory.KeepWord[121]) / g_InteralMemory.KeepWord[123];////冲口抬刀过程编码器脉冲数
 		
 		
@@ -3060,7 +3091,10 @@ InPulseCount[7]
 		g_InteralMemory.KeepWord[474] = g_InteralMemory.KeepWord[454] * g_InteralMemory.KeepWord[455] / 1000 * Encoder_Pulse / PI / Gunzhijing ;////段长3编码器脉冲数
 		g_InteralMemory.KeepWord[475] = g_InteralMemory.KeepWord[456] * g_InteralMemory.KeepWord[457] / 1000 * Encoder_Pulse / PI / Gunzhijing ;////段长4编码器脉冲数
 			
-		
+		/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[471] == 0)   
+				g_InteralMemory.KeepWord[471] = 25500;  
+			/**************Bug修复 by方佳伟*********************/ 
 		g_InteralMemory.KeepWord[478] = g_InteralMemory.KeepWord[477] + 10000 * (g_InteralMemory.KeepWord[44]-g_InteralMemory.KeepWord[469]) / g_InteralMemory.KeepWord[471];////冲口抬刀过程编码器脉冲数
 			
 		
@@ -3222,6 +3256,11 @@ InPulseCount[7]
 			g_InteralMemory.KeepWord[115] = 10000 * onecircle_pulse * Gunzhijing / 5000.0 / Pianxinju_2 / i ;//A点K值K_A2
 			
 			g_InteralMemory.KeepWord[116] = Dingchang * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
+			
+			/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[115] == 0)   
+				g_InteralMemory.KeepWord[115] = 13600;  
+			/**************Bug修复 by方佳伟*********************/ 
 			g_InteralMemory.KeepWord[117] = 10000 * g_InteralMemory.KeepWord[114] / g_InteralMemory.KeepWord[115];////下刀过程编码器脉冲数
 				
 			g_InteralMemory.KeepWord[118] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
@@ -3277,9 +3316,16 @@ InPulseCount[7]
 			g_InteralMemory.KeepWord[125] = Duanchang2 * Encoder_Pulse / PI / Gunzhijing ;////段长2编码器脉冲数
 			g_InteralMemory.KeepWord[126] = Duanchang3 * Encoder_Pulse / PI / Gunzhijing ;////段长3编码器脉冲数
 			g_InteralMemory.KeepWord[127] = Duanchang4 * Encoder_Pulse / PI / Gunzhijing ;////段长4编码器脉冲数
-	
-			g_InteralMemory.KeepWord[128] = 10000 * g_InteralMemory.KeepWord[122] / g_InteralMemory.KeepWord[123];////冲口下刀过程编码器脉冲数
 			
+			/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[123] == 0)   
+				g_InteralMemory.KeepWord[123] = 25500;  
+			/**************Bug修复 by方佳伟*********************/ 
+			g_InteralMemory.KeepWord[128] = 10000 * g_InteralMemory.KeepWord[122] / g_InteralMemory.KeepWord[123];////冲口下刀过程编码器脉冲数
+			/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[260] == 0)   
+				g_InteralMemory.KeepWord[260] = 1000;  
+			/**************Bug修复 by方佳伟*********************/ 
 			g_InteralMemory.KeepWord[129] = Pianxinju_1 * sin(a) * Encoder_Pulse / PI / Gunzhijing * 1000 / g_InteralMemory.KeepWord[260];////冲口过程编码器脉冲数
 			
 			g_InteralMemory.KeepWord[130] = g_InteralMemory.KeepWord[129] + 10000 * (g_InteralMemory.KeepWord[44]-g_InteralMemory.KeepWord[121]) / g_InteralMemory.KeepWord[123];////冲口抬刀过程编码器脉冲数
@@ -3500,6 +3546,12 @@ InPulseCount[7]
 			g_InteralMemory.KeepWord[463] = 10000 * onecircle_pulse * Gunzhijing / 5000.0 / Pianxinju_2 / i ;//A点K值K_A2
 			
 			g_InteralMemory.KeepWord[464] = Dingchang * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
+			
+			/**************Bug修复 by方佳伟*********************/    
+			if(g_InteralMemory.KeepWord[463] == 0)   
+				g_InteralMemory.KeepWord[463] = 13600;
+			/**************Bug修复 by方佳伟*********************/ 
+			
 			g_InteralMemory.KeepWord[465] = 10000 * g_InteralMemory.KeepWord[462] / g_InteralMemory.KeepWord[463];////下刀过程编码器脉冲数
 				
 			g_InteralMemory.KeepWord[466] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
@@ -3556,7 +3608,17 @@ InPulseCount[7]
 			g_InteralMemory.KeepWord[474] = Duanchang3 * Encoder_Pulse / PI / Gunzhijing ;////段长3编码器脉冲数
 			g_InteralMemory.KeepWord[475] = Duanchang4 * Encoder_Pulse / PI / Gunzhijing ;////段长4编码器脉冲数
 	
+			/**************Bug修复 by方佳伟*********************/
+			if(g_InteralMemory.KeepWord[471] == 0)
+				g_InteralMemory.KeepWord[471] = 25500;
+			/**************Bug修复 by方佳伟*********************/
+			
 			g_InteralMemory.KeepWord[476] = 10000 * g_InteralMemory.KeepWord[470] / g_InteralMemory.KeepWord[471];////冲口下刀过程编码器脉冲数
+			
+			/**************Bug修复 by方佳伟*********************/
+			if(g_InteralMemory.KeepWord[260] == 0)
+				g_InteralMemory.KeepWord[260] = 1000;
+			/**************Bug修复 by方佳伟*********************/
 			
 			g_InteralMemory.KeepWord[477] = Pianxinju_1 * sin(a) * Encoder_Pulse / PI / Gunzhijing * 1000 / g_InteralMemory.KeepWord[260];////冲口过程编码器脉冲数
 			
@@ -3773,6 +3835,12 @@ InPulseCount[7]
 			g_InteralMemory.KeepWord[144] = 10000 * onecircle_pulse * Gunzhijing / 5000.0 / Pianxinju_2 / i ;//A点K值K_A2
 			
 			g_InteralMemory.KeepWord[145] = Dingchang * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
+			
+			/**************Bug修复 by方佳伟*********************/   
+			if(g_InteralMemory.KeepWord[144] == 0)
+				g_InteralMemory.KeepWord[144] = 13600; 
+			/**************Bug修复 by方佳伟*********************/ 
+			
 			g_InteralMemory.KeepWord[146] = 10000 * g_InteralMemory.KeepWord[143] / g_InteralMemory.KeepWord[144];////下刀过程编码器脉冲数
 				
 			g_InteralMemory.KeepWord[147] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
@@ -3828,10 +3896,16 @@ InPulseCount[7]
 			
 			g_InteralMemory.KeepWord[153] = Duanchang1 * Encoder_Pulse / PI / Gunzhijing ;////段长1编码器脉冲数
 			g_InteralMemory.KeepWord[154] = Duanchang2 * Encoder_Pulse / PI / Gunzhijing ;////段长2编码器脉冲数
-			
+			/**************Bug修复 by方佳伟*********************/ 
+			if(g_InteralMemory.KeepWord[152] == 0)
+				g_InteralMemory.KeepWord[152] = 25500;
+			/**************Bug修复 by方佳伟*********************/ 
 	
 			g_InteralMemory.KeepWord[155] = 10000 * g_InteralMemory.KeepWord[151] / g_InteralMemory.KeepWord[152];////冲口下刀过程编码器脉冲数
-			
+			/**************Bug修复 by方佳伟*********************/ 
+			if(g_InteralMemory.KeepWord[260] == 0)
+				g_InteralMemory.KeepWord[260] = 1000;
+			/**************Bug修复 by方佳伟*********************/ 
 			g_InteralMemory.KeepWord[156] = Pianxinju_1 * sin(a) * Encoder_Pulse / PI / Gunzhijing * 1000 / g_InteralMemory.KeepWord[260];////冲口过程编码器脉冲数
 			
 			g_InteralMemory.KeepWord[157] = g_InteralMemory.KeepWord[156] + 10000 * (g_InteralMemory.KeepWord[44]-g_InteralMemory.KeepWord[150]) / g_InteralMemory.KeepWord[152];////冲口抬刀过程编码器脉冲数
@@ -4046,6 +4120,10 @@ InPulseCount[7]
 			g_InteralMemory.KeepWord[511] = 10000 * onecircle_pulse * Gunzhijing / 5000.0 / Pianxinju_2 / i ;//A点K值K_A2
 			
 			g_InteralMemory.KeepWord[512] = Dingchang * Encoder_Pulse / PI / Gunzhijing ;////定长编码器脉冲数
+			/**************Bug修复 by方佳伟*********************/ 
+			if(g_InteralMemory.KeepWord[511] == 0)
+				g_InteralMemory.KeepWord[511] = 13600;
+			/**************Bug修复 by方佳伟*********************/ 
 			g_InteralMemory.KeepWord[513] = 10000 * g_InteralMemory.KeepWord[510] / g_InteralMemory.KeepWord[511];////下刀过程编码器脉冲数
 				
 			g_InteralMemory.KeepWord[514] = Pianxinju_2 * sin(a) * Encoder_Pulse / PI / Gunzhijing ;////切断过程编码器脉冲数
@@ -4102,9 +4180,15 @@ InPulseCount[7]
 			g_InteralMemory.KeepWord[520] = Duanchang1 * Encoder_Pulse / PI / Gunzhijing ;////段长1编码器脉冲数
 			g_InteralMemory.KeepWord[521] = Duanchang2 * Encoder_Pulse / PI / Gunzhijing ;////段长2编码器脉冲数
 			
-	
+			/**************Bug修复 by方佳伟*********************/
+			if(g_InteralMemory.KeepWord[519] == 0)
+				g_InteralMemory.KeepWord[519] = 25500;
+			/**************Bug修复 by方佳伟*********************/
 			g_InteralMemory.KeepWord[522] = 10000 * g_InteralMemory.KeepWord[518] / g_InteralMemory.KeepWord[519];////冲口下刀过程编码器脉冲数
-			
+			/**************Bug修复 by方佳伟*********************/
+			if(g_InteralMemory.KeepWord[260] == 0)
+				g_InteralMemory.KeepWord[260] = 1000;
+			/**************Bug修复 by方佳伟*********************/
 			g_InteralMemory.KeepWord[523] = Pianxinju_1 * sin(a) * Encoder_Pulse / PI / Gunzhijing * 1000 / g_InteralMemory.KeepWord[260] ;////冲口过程编码器脉冲数
 			
 			g_InteralMemory.KeepWord[524] = g_InteralMemory.KeepWord[523] + 10000 * (g_InteralMemory.KeepWord[44]-g_InteralMemory.KeepWord[517]) / g_InteralMemory.KeepWord[519];////冲口抬刀过程编码器脉冲数

@@ -333,6 +333,10 @@ void chong_qie_function(void)///包含冲口+定长,单独定长两种功能
 	//////////////////////////////////////////////////////////////
 	if((g_InteralMemory.KeepBit[12] == 1) && (Chongkou_on_off > 0) && (g_InteralMemory.KeepBit[10] == 0) && (cut_all > 0))
 	{
+		/**************Bug Fixed FJW****************/
+		if(g_InteralMemory.KeepWord[2] == 0)
+			g_InteralMemory.KeepWord[2] = 510;
+		/**************Bug Fixed FJW****************/
 		g_InteralMemory.KeepWord[79] = g_InteralMemory.KeepWord[42] / 10.0 * Encoder_Pulse / PI / g_InteralMemory.KeepWord[2] * 10.0 ;////刀间距对应编码器脉冲数,允许在线调整
 		
 		buchang_pulse=g_InteralMemory.Word[500]  * g_InteralMemory.KeepWord[169] / 0.064 / 25 / 100;
@@ -733,6 +737,11 @@ void xiekou_chongqie_function(void)
 	//////////////////////////////////////////////////////////////
 	if((g_InteralMemory.KeepBit[12] == 1) && (Chongkou_on_off > 0) && (g_InteralMemory.KeepBit[10] == 0) && (cut_all > 0))
 	{
+		/**************Bug Fixed FJW****************/
+		if(g_InteralMemory.KeepWord[2] == 0)
+			g_InteralMemory.KeepWord[2] = 510;
+		/**************Bug Fixed FJW****************/
+		
 		g_InteralMemory.KeepWord[79] = g_InteralMemory.KeepWord[42] / 10.0 * Encoder_Pulse / PI / g_InteralMemory.KeepWord[2] * 10.0 ;////刀间距对应编码器脉冲数,允许在线调整
 		buchang_pulse=g_InteralMemory.Word[500]  * g_InteralMemory.KeepWord[169] / 0.064 / 25 / 100;
 		if(Enable_qieduan[current_qieduan] >= (g_InteralMemory.KeepWord[79]  - Inpulse_xiadao2-20 + buchang_pulse))
@@ -1074,6 +1083,10 @@ void lianchong_qie_function(void)
 	//////////////////////////////////////////////////////////////
 	if((g_InteralMemory.KeepBit[12] == 1) && (Chongkou_on_off > 0) && (g_InteralMemory.KeepBit[10] == 0) && (cut_all > 0))
 	{
+		/**************Bug Fixed FJW****************/
+		if(g_InteralMemory.KeepWord[2] == 0)
+			g_InteralMemory.KeepWord[2] = 510;
+		/**************Bug Fixed FJW****************/
 		g_InteralMemory.KeepWord[79] = g_InteralMemory.KeepWord[42] / 10.0 * Encoder_Pulse / PI / g_InteralMemory.KeepWord[2] * 10.0 ;////刀间距对应编码器脉冲数,允许在线调整
 		buchang_pulse=g_InteralMemory.Word[500]  * g_InteralMemory.KeepWord[169] / 0.064 / 25 / 100;
 		if(Enable_qieduan[current_qieduan] >= (g_InteralMemory.KeepWord[79]  - Inpulse_xiadao2 +buchang_pulse))//////+g_InteralMemory.KeepWord[154]
