@@ -376,6 +376,7 @@ InPulseCount[7]
 	double Dingchang1,Dingchang2,Dingchang3;
 	
 	
+	
 	if((g_InteralMemory.Bit[30] == 1) || (g_InteralMemory.Bit[31] == 1) || (g_InteralMemory.Bit[32] == 1))
 	{
 		Set_Y_Value(11,1);//冲口电机脉冲禁止
@@ -656,7 +657,6 @@ InPulseCount[7]
 		g_InteralMemory.Bit[28]=1;
 		g_InteralMemory.Bit[29]=0;///状态指示灯
 	}
-	
 	
 	
 	
@@ -3168,6 +3168,7 @@ InPulseCount[7]
 		
 	}
 	
+	
 	if(g_InteralMemory.Bit[92] == 1)/////连冲-定长产品2完成
 	{
 		g_InteralMemory.Bit[38] =0;
@@ -4037,7 +4038,11 @@ InPulseCount[7]
 	
 		Inpulse_dengdai1[0] =g_InteralMemory.KeepWord[153] - Inpulse_xiadao1-Inpulse_qieduan1-Inpulse_taidao1;
 		
-		
+		/****Bug Fixed***/
+		if(g_InteralMemory.KeepWord[137] == 0){
+			g_InteralMemory.KeepWord[137] = 500;
+		}
+	/****Bug Fixed***/	
 	
 		Chongkoushu =  (g_InteralMemory.KeepWord[139]-g_InteralMemory.KeepWord[135]) /  g_InteralMemory.KeepWord[137] +1;
 		
@@ -4320,7 +4325,11 @@ InPulseCount[7]
 		
 		K_A1 = g_InteralMemory.KeepWord[519];
 	
-	
+	/****Bug Fixed***/
+		if(g_InteralMemory.KeepWord[503] == 0){
+			g_InteralMemory.KeepWord[503] = 500;
+		}
+	/****Bug Fixed***/	
 		Chongkoushu =  (g_InteralMemory.KeepWord[505]-g_InteralMemory.KeepWord[501]) /  g_InteralMemory.KeepWord[503] +1;
 		
 		Inpulse_dengdai1[0] =g_InteralMemory.KeepWord[520]  + g_InteralMemory.KeepWord[512]-g_InteralMemory.KeepWord[521] * (Chongkoushu-1)-g_InteralMemory.KeepWord[520]-Inpulse_xiadao1-Inpulse_qieduan1-Inpulse_taidao1;
@@ -4368,6 +4377,7 @@ InPulseCount[7]
 			InPulse1_Start();
 	
 	}
+	
 	
 	
 

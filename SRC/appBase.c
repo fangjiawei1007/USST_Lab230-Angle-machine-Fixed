@@ -1057,6 +1057,12 @@ void lianchong_qie_function(void)
 				///////////////////////////////////////////////////////////////////连冲参数在线导入
 				if(g_InteralMemory.Bit[82] == 1)/////连冲-定长产品一完成
 				{
+					/****Bug Fixed***/
+					if(g_InteralMemory.KeepWord[137] == 0){
+						g_InteralMemory.KeepWord[137] = 500;
+					}
+					/****Bug Fixed***/	
+					
 					Chongkoushu =  (g_InteralMemory.KeepWord[139]-g_InteralMemory.KeepWord[135]) /  g_InteralMemory.KeepWord[137] +1;
 			
 					Inpulse_dengdai1[0] =g_InteralMemory.KeepWord[153]  + g_InteralMemory.KeepWord[145]-g_InteralMemory.KeepWord[154] * (Chongkoushu-1)-g_InteralMemory.KeepWord[153]-Inpulse_xiadao1-Inpulse_qieduan1-Inpulse_taidao1;
@@ -1066,6 +1072,12 @@ void lianchong_qie_function(void)
 				}
 				else if(g_InteralMemory.Bit[92] == 1)/////连冲-定长产品2
 				{
+					/****Bug Fixed***/
+					if(g_InteralMemory.KeepWord[503] == 0){
+						g_InteralMemory.KeepWord[503] = 500;
+					}
+					/****Bug Fixed***/	
+					
 					Chongkoushu =  (g_InteralMemory.KeepWord[505]-g_InteralMemory.KeepWord[501]) /  g_InteralMemory.KeepWord[503] +1;
 		
 					Inpulse_dengdai1[0] =g_InteralMemory.KeepWord[520]  + g_InteralMemory.KeepWord[512]-g_InteralMemory.KeepWord[521] * (Chongkoushu-1)-g_InteralMemory.KeepWord[520]-Inpulse_xiadao1-Inpulse_qieduan1-Inpulse_taidao1;
@@ -1349,7 +1361,6 @@ void qiangqie_function(void)
 ///////////////////////////////////////////////////////////////////
 void __irq PulseIn_1_Process(void)	
 {
-	
 
 	if((rGPFDAT >> 1) & 0x1)
 	{

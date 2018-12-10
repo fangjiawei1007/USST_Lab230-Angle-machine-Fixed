@@ -339,9 +339,11 @@ void Main(void)
 				
 				//////////////////////////////////////
 				
+				
 			}
-	
-
+				
+			
+			
 			if(g_GlobalVar.Screen_Flag==1)
 			{
 				if(CurrentScrNum>0 && CurrentScrNum<255)
@@ -386,7 +388,7 @@ void Main(void)
 			if(!bTSP_DownFlag)
 				RefreshButtonUp();
 
-
+			
 			if(TRUE == g_com_Flag)
 			{
 				g_com_Flag = FALSE;
@@ -398,19 +400,25 @@ void Main(void)
 				refresh_delay = 1;
 			}
 
+			
+			
+			
 			//if (k > 500000) 	// 2000*250
 			if (k > 2000*refresh_delay) 
 			{
 				k = 0;
 				//FeedWacthDog();
-				
+
 				RefreshNumDispButton();
+
 				if (flag == 1)
 				{
 					KeyScan();
 					flag = 0;
 				}
 			
+				
+				
 				RefreshSetValue();
 				if (flag == 1)
 				{
@@ -426,6 +434,7 @@ void Main(void)
 				Led_on_off();
 					
 			}
+			
 			
 		}
 	}

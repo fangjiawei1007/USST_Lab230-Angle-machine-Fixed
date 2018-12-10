@@ -2805,6 +2805,7 @@ void RefreshNumDispButton(void)
 {
 	U8 i;
 
+	
 	for(i=0;i<RefreshNum;i++)
 	{
 		if(flag==1)
